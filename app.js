@@ -17,6 +17,23 @@ function agregarAmigo(){
         amigos.push(nombreAmigo);
         //mostramos el array
         console.log(amigos);
+        //mostramos la lista
+        actualizarLista()
         //limpiar el campo para el nombre siguiente
         nombreInput.value='';
+
+        //vamos a mostrar la lista de amigos en el codigo html
+        function actualizarLista(){
+            //obtenemos la lista del html
+            const lista= document.getElementById('listaAmigos');
+            //la limpiamos para evitar duplicados
+            lista.innerHTML='';
+            //por cada amigo en amigos creamos un elemento li
+            for (let i = 0; i < amigos.length; i++) {
+                const item = document.createElement('li');
+                item.textContent=amigos[i];
+                lista.append(item);
+                
+            }
+        }
     }
