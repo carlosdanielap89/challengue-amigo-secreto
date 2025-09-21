@@ -7,5 +7,16 @@ function agregarAmigo(){
         //tomamos el valor de este
         const nombreAmigo=nombreInput.value;
 
-        console.log(nombreAmigo);
+        //verificamos que el campo no este vacio
+        if (nombreAmigo==='') {
+            alert('por favor, escribe el nombre de un amigo');
+            return;
+            
+        }
+        //agregamos el nombre del amigo al array
+        amigos.push(nombreAmigo);
+        //mostramos el array
+        console.log(amigos);
+        //limpiar el campo para el nombre siguiente
+        nombreInput.value='';
     }
